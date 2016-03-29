@@ -15,10 +15,7 @@ def signal_handler(signal, frame):
 
 
 while True:
-    try:
-        signal.signal(signal.SIGINT, signal_handler)
-        today = time.strftime("%Y%m%d")
-        skype.Profile('BIRTHDAY', Set=unicode(today))
-        time.sleep(3600)
-    except (KeyboardInterrupt, SystemExit):
-        sys.exit(0)
+    signal.signal(signal.SIGINT, signal_handler)
+    today = time.strftime("%Y%m%d")
+    skype.Profile('BIRTHDAY', Set=unicode(today))
+    time.sleep(3600)
